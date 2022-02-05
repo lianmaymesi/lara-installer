@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Lianmaymesi\LaraInstaller\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaraInstallerCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'lara-installer';
 
     public $description = 'My command';
 
