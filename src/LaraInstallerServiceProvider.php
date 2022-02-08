@@ -19,7 +19,8 @@ class LaraInstallerServiceProvider extends PackageServiceProvider
             ->name('lara-installer')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_lara-installer_table')
-            ->hasCommand(LaraInstallerCommand::class);
+            ->hasRoute('lara-installer');
+        // ->hasMigration('create_lara-installer_table')
+        // ->hasCommand(LaraInstallerCommand::class);
     }
 }
