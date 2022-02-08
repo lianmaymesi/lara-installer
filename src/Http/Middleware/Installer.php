@@ -9,7 +9,6 @@ class Installer
     public function handle($request, Closure $next)
     {
         if ($this->alreadyInstalled()) {
-
             return redirect()->route('index');
         }
 

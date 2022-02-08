@@ -2,8 +2,8 @@
 
 namespace Lianmaymesi\LaraInstaller\Http\Controllers;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Contracts\View\View;
+use Illuminate\Routing\Controller;
 
 class WelcomeController extends Controller
 {

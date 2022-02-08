@@ -18,7 +18,7 @@ class InstallDatabaseRequest extends FormRequest
             'db_port' => 'required|numeric',
             'db_name' => 'required',
             'db_user' => 'required',
-            'db_pass' => 'required|min:3'
+            'db_pass' => 'required|min:3',
         ];
     }
 }
