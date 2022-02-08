@@ -2,9 +2,9 @@
 
 namespace Lianmaymesi\LaraInstaller;
 
+use Lianmaymesi\LaraInstaller\Commands\LaraInstallerCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Lianmaymesi\LaraInstaller\Commands\LaraInstallerCommand;
 
 class LaraInstallerServiceProvider extends PackageServiceProvider
 {
