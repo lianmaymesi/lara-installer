@@ -2,11 +2,10 @@
 
 namespace Lianmaymesi\LaraInstaller\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
 use Lianmaymesi\LaraInstaller\Http\Requests\AccountRegisterRequest;
 
 class AccountController extends Controller
