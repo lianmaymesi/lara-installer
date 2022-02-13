@@ -9,7 +9,7 @@ class RequirementControllerTest extends TestCase
     // use RefreshDatabase;
 
     /** @test */
-    function test_it_views_requirement_page()
+    public function test_it_views_requirement_page()
     {
         $this->get(route('li.requirement'))
             ->assertOk();

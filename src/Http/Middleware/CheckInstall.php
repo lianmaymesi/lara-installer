@@ -12,9 +12,7 @@ class CheckInstall
 {
     public function handle(Request $request, Closure $next)
     {
-
-        if (!$this->alreadyInstalled()) {
-
+        if (! $this->alreadyInstalled()) {
             return redirect()->route('li.index');
         }
 

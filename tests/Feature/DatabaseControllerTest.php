@@ -9,7 +9,7 @@ class DatabaseControllerTest extends TestCase
     // use RefreshDatabase;
 
     /** @test */
-    function test_it_views_database_page()
+    public function test_it_views_database_page()
     {
         $this->get(route('li.database'))
             ->assertOk();

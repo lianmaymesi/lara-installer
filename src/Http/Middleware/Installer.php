@@ -12,9 +12,7 @@ class Installer
 {
     public function handle(Request $request, Closure $next)
     {
-
         if ($this->alreadyInstalled()) {
-
             return redirect()->route(config('lara-installer.redirect_to'));
         }
 

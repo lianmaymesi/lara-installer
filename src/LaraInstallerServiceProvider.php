@@ -3,10 +3,10 @@
 namespace Lianmaymesi\LaraInstaller;
 
 use Illuminate\Routing\Router;
+use Lianmaymesi\LaraInstaller\Http\Middleware\CheckInstall;
+use Lianmaymesi\LaraInstaller\Http\Middleware\Installer;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Lianmaymesi\LaraInstaller\Http\Middleware\Installer;
-use Lianmaymesi\LaraInstaller\Http\Middleware\CheckInstall;
 
 class LaraInstallerServiceProvider extends PackageServiceProvider
 {
