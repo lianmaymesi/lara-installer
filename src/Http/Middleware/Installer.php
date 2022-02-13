@@ -12,9 +12,7 @@ class Installer
 {
     public function handle(Request $request, Closure $next)
     {
-
         if ($this->alreadyInstalled()) {
-
             return redirect()->route(config('lara-installer.redirect_to'));
         }
 
@@ -24,7 +22,6 @@ class Installer
     protected function alreadyInstalled(): bool
     {
         if (Schema::hasTable('migrations')) {
-
             $files = File::files(database_path('migrations'));
 
             $db = DB::table('migrations')->get()->count();

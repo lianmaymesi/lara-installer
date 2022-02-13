@@ -5,8 +5,6 @@ namespace Lianmaymesi\LaraInstaller\Tests;
 use Lianmaymesi\LaraInstaller\LaraInstallerServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
-use function Composer\Autoload\includeFile;
-
 class TestCase extends Orchestra
 {
     protected function setUp(): void
