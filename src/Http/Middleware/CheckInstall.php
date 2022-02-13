@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 
-class Installer
+class CheckInstall
 {
     public function handle(Request $request, Closure $next)
     {
 
-        if ($this->alreadyInstalled()) {
+        if (!$this->alreadyInstalled()) {
 
-            return redirect()->route(config('lara-installer.redirect_to'));
+            return redirect()->route('li.index');
         }
 
         return $next($request);
@@ -23,6 +23,7 @@ class Installer
 
     protected function alreadyInstalled(): bool
     {
+
         if (Schema::hasTable('migrations')) {
 
             $files = File::files(database_path('migrations'));

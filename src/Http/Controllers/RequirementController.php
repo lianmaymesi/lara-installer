@@ -10,7 +10,7 @@ class RequirementController extends Controller
     public function index()
     {
         $results = [
-            'php_version' => PHP_VERSION_ID >= 70300,
+            'php_version' => PHP_VERSION_ID >= config('lara-installer.php_version_id'),
             'extension_bcmath' => extension_loaded('bcmath'),
             'extension_ctype' => extension_loaded('ctype'),
             'extension_json' => extension_loaded('json'),
