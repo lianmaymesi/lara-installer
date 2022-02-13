@@ -3,15 +3,15 @@
 namespace Lianmaymesi\LaraInstaller\Http\Controllers;
 
 use Exception;
-use PDOException;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Config;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Lianmaymesi\LaraInstaller\Http\Requests\InstallDatabaseRequest;
+use PDOException;
 
 class DatabaseController extends Controller
 {
@@ -35,8 +35,9 @@ class DatabaseController extends Controller
 
         Config::set('database.connections.lara-installer', $this->dbConfig);
 
-        if ($this->databaseHasData() && !$request->has('overwrite_data')) {
+        if ($this->databaseHasData() && ! $request->has('overwrite_data')) {
             flash('checking error', 'danger');
+
             return redirect()->back()->with('data_present', true)->withInput();
         }
 
@@ -56,16 +57,15 @@ class DatabaseController extends Controller
     protected function migrateDatabase(): bool
     {
         try {
-
             Artisan::call('migrate:fresh', [
                 '--database' => 'lara-installer',
                 '--force' => true,
-                '--no-interaction' => true
+                '--no-interaction' => true,
             ]);
         } catch (Exception $th) {
-
             $alert = 'Hello test' . ' ' . $th->getMessage();
             flash($alert, 'danger');
+
             return false;
         }
 
@@ -74,7 +74,6 @@ class DatabaseController extends Controller
 
     protected function storeConfigurationInEnv($config): void
     {
-
         $envContent = File::get(base_path('.env'));
 
         // dd($config['password']);
@@ -84,13 +83,13 @@ class DatabaseController extends Controller
             '/DB_PORT=(.*)\S/',
             '/DB_DATABASE=(.*)\S/',
             '/DB_USERNAME=(.*)\S/',
-            '/DB_PASSWORD=(.*)\S/'
+            '/DB_PASSWORD=(.*)\S/',
         ], [
             'DB_HOST=' . $config['host'],
             'DB_PORT=' . $config['port'],
             'DB_DATABASE=' . $config['database'],
             'DB_USERNAME=' . $config['username'],
-            'DB_PASSWORD=' . $config['password']
+            'DB_PASSWORD=' . $config['password'],
         ], $envContent);
 
 
@@ -100,11 +99,10 @@ class DatabaseController extends Controller
     protected function databaseHasData(): bool
     {
         try {
-
             $present_tables = DB::connection('lara-installer')->getDoctrineSchemaManager()->listTableNames();
         } catch (PDOException $th) {
-
             Log::error($th->getMessage());
+
             return false;
         }
 

@@ -16,7 +16,7 @@ class AccountRegisterRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed|min:8'
+            'password' => 'required|confirmed|min:8',
         ];
     }
 }
