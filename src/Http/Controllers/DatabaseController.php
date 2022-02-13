@@ -35,7 +35,7 @@ class DatabaseController extends Controller
 
         Config::set('database.connections.lara-installer', $this->dbConfig);
 
-        if ($this->databaseHasData() && ! $request->has('overwrite_data')) {
+        if ($this->databaseHasData() && !$request->has('overwrite_data')) {
             flash('checking error', 'danger');
 
             return redirect()->back()->with('data_present', true)->withInput();
@@ -51,7 +51,7 @@ class DatabaseController extends Controller
 
         $this->storeConfigurationInEnv($this->dbConfig);
 
-        return redirect()->route('account');
+        return redirect()->route('li.account');
     }
 
     protected function migrateDatabase(): bool

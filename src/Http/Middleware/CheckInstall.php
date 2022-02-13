@@ -24,15 +24,15 @@ class CheckInstall
     protected function alreadyInstalled(): bool
     {
 
-        if (Schema::hasTable('migrations')) {
+        if (Schema::hasTable('migrations') && DB::table('users')->get()->count() > 0) {
 
             $files = File::files(database_path('migrations'));
 
             $db = DB::table('migrations')->get()->count();
 
-            return count($files) == $db ? 1 : 0;
+            return count($files) == $db ? true : false;
         }
 
-        return 0;
+        return false;
     }
 }

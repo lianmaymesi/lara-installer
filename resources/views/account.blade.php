@@ -38,7 +38,7 @@
                                 Name
                             </label>
                         </div>
-                        <input type="text" id="name" name="name" value="{{ old('name') }}"
+                        <input type="text" id="name" name="name" placeholder="Name" value="{{ old('name') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
                     @if ($errors->has('name'))
@@ -54,7 +54,7 @@
                                 Email
                             </label>
                         </div>
-                        <input type="text" id="email" name="email" value="{{ old('email') }}"
+                        <input type="text" id="email" name="email" placeholder="Email" value="{{ old('email') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
                     @if ($errors->has('email'))
@@ -70,7 +70,8 @@
                                 Password
                             </label>
                         </div>
-                        <input type="text" id="password" name="password" value="{{ old('password') }}"
+                        <input type="password" id="password" placeholder="Password" name="password"
+                            value="{{ old('password') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
                     @if ($errors->has('password'))
@@ -86,8 +87,8 @@
                                 Re-type Password
                             </label>
                         </div>
-                        <input type="text" id="password_confirmation" name="password_confirmation"
-                            value="{{ old('password_confirmation') }}"
+                        <input type="password" id="password_confirmation" placeholder="Re-type Password"
+                            name="password_confirmation" value="{{ old('password_confirmation') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
                     @if ($errors->has('password_confirmation'))

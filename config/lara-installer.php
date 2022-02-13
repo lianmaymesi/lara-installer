@@ -5,5 +5,5 @@ return [
 
     'app_version' => env('LI_APP_VERSION', '1.0.0'),
 
-    'redirect_to' => env('LI_REDIRECT_TO', 'new')
+    'redirect_to' => env('LI_REDIRECT_TO', 'home')
 ];

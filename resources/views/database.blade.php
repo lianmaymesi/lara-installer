@@ -38,7 +38,8 @@
                                 Hostname
                             </label>
                         </div>
-                        <input type="text" id="db_host" name="db_host" value="{{ old('db_host') ?: env('DB_HOST') }}"
+                        <input type="text" id="db_host" placeholder="Hostname" name="db_host"
+                            value="{{ old('db_host') ?: env('DB_HOST') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
                     @if ($errors->has('db_host'))
@@ -54,7 +55,8 @@
                                 Port
                             </label>
                         </div>
-                        <input type="text" id="db_port" name="db_port" value="{{ old('db_port') ?: env('DB_PORT') }}"
+                        <input type="text" id="db_port" name="db_port" placeholder="Port"
+                            value="{{ old('db_port') ?: env('DB_PORT') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
                     @if ($errors->has('db_port'))
@@ -70,7 +72,7 @@
                                 Database
                             </label>
                         </div>
-                        <input type="text" id="db_name" name="db_name"
+                        <input type="text" id="db_name" name="db_name" placeholder="Database"
                             value="{{ old('db_name') ?: env('DB_DATABASE') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
@@ -87,7 +89,7 @@
                                 Username
                             </label>
                         </div>
-                        <input type="text" id="db_user" name="db_user"
+                        <input type="text" id="db_user" name="db_user" placeholder="Username"
                             value="{{ old('db_user') ?: env('DB_USERNAME') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
@@ -104,7 +106,7 @@
                                 Password
                             </label>
                         </div>
-                        <input type="text" id="db_pass" name="db_pass"
+                        <input type="password" id="db_pass" name="db_pass" placeholder="Password"
                             value="{{ old('db_pass') ?: env('DB_PASSWORD') }}"
                             class="block transition duration-75 shadow-sm focus:ring-1 w-full focus:ring-inset font-semibold bg-slate-50 text-sm dark:bg-slate-800 dark:border-slate-700 focus:border-blue-400 focus:ring-blue-400 border-gray-300 focus:bg-white" />
                     </div>
