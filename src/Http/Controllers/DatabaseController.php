@@ -35,7 +35,7 @@ class DatabaseController extends Controller
 
         Config::set('database.connections.lara-installer', $this->dbConfig);
 
-        if ($this->databaseHasData() && !$request->has('overwrite_data')) {
+        if ($this->databaseHasData() && ! $request->has('overwrite_data')) {
             flash('checking error', 'danger');
 
             return redirect()->back()->with('data_present', true)->withInput();
