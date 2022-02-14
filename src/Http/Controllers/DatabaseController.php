@@ -35,8 +35,7 @@ class DatabaseController extends Controller
 
         Config::set('database.connections.lara-installer', $this->dbConfig);
 
-        if ($this->databaseHasData() && !$request->has('overwrite_data')) {
-
+        if ($this->databaseHasData() && ! $request->has('overwrite_data')) {
             return redirect()->back()->with('data_present', true)->withInput();
         }
 
@@ -62,7 +61,6 @@ class DatabaseController extends Controller
                 '--no-interaction' => true,
             ]);
         } catch (Exception $th) {
-
             return false;
         }
 
