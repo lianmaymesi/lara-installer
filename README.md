@@ -22,13 +22,13 @@ composer require lianmaymesi/lara-installer
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="lara-installer-config"
+php artisan vendor:publish --provider="Lianmaymesi\LaraInstaller\LaraInstallerServiceProvider" --tag="lara-installer-config"
 ```
 
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="lara-installer-views"
+php artisan vendor:publish --provider="Lianmaymesi\LaraInstaller\LaraInstallerServiceProvider" --tag="lara-installer-views"
 ```
 
 ## Usage
@@ -73,6 +73,20 @@ return [
 ]
 ```
 
+## Marketing Headings & Tags
+
+You can customize data in the frontend, if you'd like to keep the default UI without publishing vendor view files,
+
+```json
+return [
+    'heading' => env('LI_MARKETING_HEADING', 'Laravel installer for your App'),
+
+    'sub_heading' => env('LI_SUB_HEADING', 'A simple UI installation setup for your Laravel Application - Heavily inspired from LinkAce'),
+
+    'cta' => env('LI_MARKETING_CTA', 'https://github.com/lianmaymesi/lara-installer')
+]
+```
+
 ## Testing
 
 ```bash
@@ -93,6 +107,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
+-   [LinkAce](https://github.com/Kovah/LinkAce)
 -   [LiAn DhAs](https://github.com/lianmaymesi)
 -   [All Contributors](../../contributors)
 
