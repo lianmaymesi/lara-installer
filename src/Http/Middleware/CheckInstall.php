@@ -12,7 +12,7 @@ class CheckInstall
 {
     public function handle(Request $request, Closure $next)
     {
-        if (! $this->alreadyInstalled()) {
+        if (!$this->alreadyInstalled()) {
             return redirect()->route('li.index');
         }
 
@@ -21,10 +21,10 @@ class CheckInstall
 
     protected function alreadyInstalled(): bool
     {
-        if (Schema::hasTable('migrations') && DB::table('users')->get()->count() > 0) {
+        if (Schema::hasTable('migrations') && DB::table('users')->count() > 0) {
             $files = File::files(database_path('migrations'));
 
-            $db = DB::table('migrations')->get()->count();
+            $db = DB::table('migrations')->count();
 
             return count($files) == $db ? true : false;
         }
