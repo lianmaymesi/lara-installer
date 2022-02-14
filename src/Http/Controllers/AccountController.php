@@ -17,7 +17,7 @@ class AccountController extends Controller
 
     public function save(AccountRegisterRequest $request): RedirectResponse
     {
-        $user = DB::table('users')->insert([
+        DB::table('users')->insert([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
