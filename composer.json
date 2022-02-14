@@ -1,10 +1,11 @@
 {
     "name": "lianmaymesi/lara-installer",
-    "description": "Auto install Laravel application",
+    "description": "A simple UI installation setup for your Laravel Application",
     "keywords": [
-        "lianmaymesi",
         "laravel",
-        "lara-installer"
+        "lara-installer",
+        "laravel-installer",
+        "installer"
     ],
     "homepage": "https://github.com/lianmaymesi/lara-installer",
     "license": "MIT",

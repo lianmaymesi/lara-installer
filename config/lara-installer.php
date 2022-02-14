@@ -9,7 +9,7 @@ return [
 
     'heading' => env('LI_MARKETING_HEADING', 'Laravel installer for your App'),
 
-    'sub_heading' => env('LI_SUB_HEADING', 'A simple UI installation setup for your Laravel Application - Heavily inspired from LinkAce'),
+    'sub_heading' => env('LI_MARKETING_SUB_HEADING', 'A simple UI installation setup for your Laravel Application - Heavily inspired from LinkAce'),
 
     'cta' => env('LI_MARKETING_CTA', 'https://github.com/lianmaymesi/lara-installer')
 ];
