@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel Installer') }}</title>
 
-    <link rel="stylesheet" href="http://lara-installer.test\resources\dist\css\app.css">
+    @listyles
 
 </head>
 

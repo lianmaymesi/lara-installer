@@ -8,7 +8,7 @@
                 {{ config('app.name') }}
             </div>
             <div class="bg-orange-600 py-0.5 px-1 rounded text-xs text-white font-semibold">
-                v1.0.0
+                v{{ config('lara-installer.app_version') }}
             </div>
         </div>
 

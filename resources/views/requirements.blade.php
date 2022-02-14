@@ -4,11 +4,11 @@
 <div class="relative flex items-center lg:justify-end w-full lg:w-1/2 h-full overflow-hidden lg:p-16">
     <div
         class="flex flex-col lg:mr-40 md:bg-white lg:bg-inherit md:px-16 md:py-8 md:rounded-lg md:shadow-sm lg:p-0 lg:rounded-none lg:shadow-none">
-        <div class="flex items-end space-x-2">
+        <div class="flex items-start space-x-2">
             <div class="text-4xl font-semibold">
                 {{ config('app.name') }}
             </div>
-            <div>
+            <div class="bg-orange-600 py-0.5 px-1 rounded text-xs text-white font-semibold">
                 v{{ config('lara-installer.app_version') }}
             </div>
         </div>

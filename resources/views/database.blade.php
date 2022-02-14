@@ -5,11 +5,11 @@
     <form action="{{ route('li.save.database') }}" method="POST">
         <div
             class="flex flex-col lg:mr-20 md:bg-white lg:bg-inherit md:px-16 md:py-8 md:rounded-lg md:shadow-sm lg:p-0 lg:rounded-none lg:shadow-none">
-            <div class="flex items-end space-x-2">
+            <div class="flex items-start space-x-2">
                 <div class="text-4xl font-semibold">
                     {{ config('app.name') }}
                 </div>
-                <div>
+                <div class="bg-orange-600 py-0.5 px-1 rounded text-xs text-white font-semibold">
                     v{{ config('lara-installer.app_version') }}
                 </div>
             </div>
@@ -130,15 +130,24 @@
                 @endif
             </div>
 
-            <div class="flex">
+            <div class="flex space-x-4">
                 <button type="submit" class="block px-8 pt-1.5 pb-2 bg-slate-800 text-slate-200 rounded-md">
-                    @if($errors->any())
+                    @if(session('data_present', false))
                     Refresh Database
                     @else
                     Next
                     @endif
                 </button>
+
+                @if(session('data_present', false))
+                <a href="{{ route('li.account') }}"
+                    class="block px-8 pt-1.5 pb-2 bg-orange-800 text-orange-200 rounded-md">
+                    Skip
+                </a>
+                @endif
+
             </div>
+
         </div>
     </form>
 </div>

@@ -3,10 +3,11 @@
 namespace Lianmaymesi\LaraInstaller;
 
 use Illuminate\Routing\Router;
-use Lianmaymesi\LaraInstaller\Http\Middleware\CheckInstall;
-use Lianmaymesi\LaraInstaller\Http\Middleware\Installer;
+use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Lianmaymesi\LaraInstaller\Http\Middleware\Installer;
+use Lianmaymesi\LaraInstaller\Http\Middleware\CheckInstall;
 
 class LaraInstallerServiceProvider extends PackageServiceProvider
 {
@@ -34,5 +35,9 @@ class LaraInstallerServiceProvider extends PackageServiceProvider
         $router->aliasMiddleware('lara-installer', Installer::class);
 
         $router->aliasMiddleware('check-install', CheckInstall::class);
+
+        Blade::directive('listyles', function () {
+            return '<style>' . file_get_contents(__DIR__ . './../resources/dist/css/app.css') . '</style>';
+        });
     }
 }

@@ -5,18 +5,18 @@
     <form action="{{ route('li.save.account') }}" method="post">
         <div
             class="flex flex-col lg:mr-20 md:bg-white lg:bg-inherit md:px-16 md:py-8 md:rounded-lg md:shadow-sm lg:p-0 lg:rounded-none lg:shadow-none">
-            <div class="flex items-end space-x-2">
+            <div class="flex items-start space-x-2">
                 <div class="text-4xl font-semibold">
                     {{ config('app.name') }}
                 </div>
-                <div>
+                <div class="bg-orange-600 py-0.5 px-1 rounded text-xs text-white font-semibold">
                     v{{ config('lara-installer.app_version') }}
                 </div>
             </div>
 
             <ul class="flex flex-col space-y-3 mt-8">
                 <li class="flex space-x-4 items-center">
-                    <a href="{{ route('li.requirement') }}" class="mt-1">
+                    <a href="{{ route('li.database') }}" class="mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -5,7 +5,7 @@ use Lianmaymesi\LaraInstaller\Http\Controllers\WelcomeController;
 use Lianmaymesi\LaraInstaller\Http\Controllers\DatabaseController;
 use Lianmaymesi\LaraInstaller\Http\Controllers\RequirementController;
 
-Route::name('li.')->middleware(['web', 'lara-installer'])->group(function () {
+Route::name('li.')->middleware(['web'])->group(function () {
     Route::get('/install', [WelcomeController::class, 'index'])->name('index');
     Route::get('/requirments', [RequirementController::class, 'index'])->name('requirement');
     Route::get('/database', [DatabaseController::class, 'index'])->name('database');
